@@ -54,6 +54,7 @@ rummik/zsh-tailf
 mattmc3/zman
 agkozak/zsh-z
 
+https://github.com/junegunn/fzf-git.sh
 
 ### Local Plugins
 #
@@ -62,7 +63,6 @@ agkozak/zsh-z
 #
 ###
 $ZDOTDIR/.aliases
-#$ZDOTDIR/custom/plugins/example
 
 ### Local Plugins with Variables
 #
