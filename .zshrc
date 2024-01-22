@@ -22,12 +22,17 @@ autoload -Uz $fpath[1]/*(.:t)
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
 
-autoload -Uz compinit; compinit
+# autoload -Uz compinit; compinit
+autoload -U compinit
+compinit -i
 
-export GPG_TTY=$(tty)
 bindkey '^[OA' history-substring-search-up
 bindkey '^[OB' history-substring-search-down
 
+export GPG_TTY=$(tty)
+
+
+# fuzzy finder stuff with ripgrep
 if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files'
   export FZF_DEFAULT_OPTS='-m --height 50% --border'

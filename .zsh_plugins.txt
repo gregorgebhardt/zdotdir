@@ -233,6 +233,8 @@ zdharma-continuum/fast-syntax-highlighting kind:defer
 # We combine the `path:` and `kind:fpath` annotations here:
 zsh-users/zsh-completions path:src kind:fpath
 docker/cli path:contrib/completion/zsh kind:fpath
+go-task/task path:completion/zsh kind:fpath
+sudosubin/zsh-github-cli
 
 # Compinit plugins should be near the end of .zsh_plugins.txt so that $fpath has been
 # fully populated. Use zsh-utils for its completion plugin.
