@@ -21,3 +21,7 @@ autoload -Uz $fpath[1]/*(.:t)
 # Create an amazing Zsh config using antidote plugins.
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
+
+autoload -Uz compinit; compinit
+
+export GPG_TTY=$(tty)

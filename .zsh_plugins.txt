@@ -148,7 +148,7 @@ ohmyzsh/ohmyzsh path:plugins/copypath
 ohmyzsh/ohmyzsh path:plugins/extract
 ohmyzsh/ohmyzsh path:plugins/magic-enter
 ohmyzsh/ohmyzsh path:plugins/fancy-ctrl-z
-
+#ohmyzsh/ohmyzsh path:plugins/docker
 
 ### Framework: Prezto
 #
@@ -197,7 +197,7 @@ ohmyzsh/ohmyzsh path:plugins/fancy-ctrl-z
 #
 ###
 belak/zsh-utils path:history
-belak/zsh-utils path:utility
+gregorgebhardt/zsh-utils path:utility branch:replace-ls-color-option
 belak/zsh-utils path:editor
 
 ### Deferred Plugins
@@ -216,6 +216,27 @@ belak/zsh-utils path:editor
 #zsh-users/zsh-syntax-highlighting kind:defer
 zdharma-continuum/fast-syntax-highlighting kind:defer
 
+### Completions
+#
+# You may want to add some additional completions to Zsh. Completions look in your fpath
+# for completion functions, which are functions named with a leading underscore
+# (eg: _git). You need to add all supplemental completions to your fpath prior to
+# running `compinit` to use completions functionality properly. You will want to find
+# a completion plugin that runs `compinit` for you, or you can run it yourself in
+# your .zshrc after antidote loads like this:
+#
+#   autoload -Uz compinit && compinit
+#
+###
+
+# zsh-users/zsh-completions is a popular plugin for adding supplemental completions.
+# We combine the `path:` and `kind:fpath` annotations here:
+zsh-users/zsh-completions path:src kind:fpath
+docker/cli path:contrib/completion/zsh kind:fpath
+
+# Compinit plugins should be near the end of .zsh_plugins.txt so that $fpath has been
+# fully populated. Use zsh-utils for its completion plugin.
+belak/zsh-utils path:completion
 
 ### Final Plugins
 #
