@@ -50,3 +50,9 @@ alias kubens='kubectl ns'
 fcd() { 
   cd $(find . -type d | fzf -q "${1:-}")
 }
+
+# lsd
+alias ls='lsd'
+alias l='ls -l'
+alias la='ls -la'
+alias lt='ls --tree'
