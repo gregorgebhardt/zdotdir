@@ -231,6 +231,11 @@ docker/cli path:contrib/completion/zsh kind:fpath
 go-task/task path:completion/zsh kind:fpath
 sudosubin/zsh-github-cli
 
+# kubectx autocompletion
+ahmetb/kubectx path:completion kind:fpath
+
+$ZDOTDIR/custom/plugins/kubectl
+
 # Compinit plugins should be near the end of .zsh_plugins.txt so that $fpath has been
 # fully populated. Use zsh-utils for its completion plugin.
 belak/zsh-utils path:completion

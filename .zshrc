@@ -29,6 +29,12 @@ bindkey '^[OB' history-substring-search-down
 
 export GPG_TTY=$(tty)
 
+PATH=${PATH}:/home/gebhagr/.local/bin
+PATH=${PATH}:/usr/local/go/bin
+PATH=${PATH}:/home/gebhagr/go/bin
+PATH=${PATH}:${KREW_ROOT:-$HOME/.krew}/bin
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # fuzzy finder stuff with ripgrep
 if type rg &> /dev/null; then
