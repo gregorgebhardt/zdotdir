@@ -22,9 +22,7 @@ autoload -Uz $fpath[1]/*(.:t)
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
 
-# autoload -Uz compinit; compinit
-autoload -U compinit
-compinit -i
+autoload -Uz compinit && compinit
 
 bindkey '^[OA' history-substring-search-up
 bindkey '^[OB' history-substring-search-down
@@ -39,3 +37,5 @@ if type rg &> /dev/null; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(starship init zsh)"
