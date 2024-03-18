@@ -197,7 +197,7 @@ ohmyzsh/ohmyzsh path:plugins/fancy-ctrl-z
 #
 ###
 belak/zsh-utils path:history
-gregorgebhardt/zsh-utils path:utility branch:replace-ls-color-option
+belak/zsh-utils path:utility
 belak/zsh-utils path:editor
 
 ### Deferred Plugins
