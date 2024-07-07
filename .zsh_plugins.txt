@@ -33,7 +33,14 @@
 
 # With antidote, using Zephyr's completion plugin is recommended. This plugin is meant
 # to be run near the TOP of your .zsh_plugins.txt file.
-mattmc3/zephyr path:plugins/completion
+
+# zsh-users/zsh-completions is a popular plugin for adding supplemental completions.
+# We combine the `path:` and `kind:fpath` annotations here:
+# zsh-users/zsh-completions path:src kind:fpath
+
+# Most other compinit plugins should be near the END of .zsh_plugins.txt so that $fpath
+# has been fully populated. One such plugin is zsh-utils and its completion subplugin.
+# belak/zsh-utils path:completion
 
 ### Regular Plugins
 #
@@ -57,6 +64,8 @@ https://github.com/junegunn/fzf-git.sh
 #
 ###
 $ZDOTDIR/.aliases
+#$ZDOTDIR/custom/plugins/example
+
 
 ### Local Plugins with Variables
 #
@@ -121,6 +130,7 @@ romkatv/zsh-bench kind:path
 #
 ###
 
+
 ### Framework: Oh-My-Zsh
 #
 # Oh-My-Zsh is a very popular Zsh framework. You might choose to use plugins from OMZ
@@ -135,6 +145,7 @@ romkatv/zsh-bench kind:path
 #   ohmyzsh/ohmyzsh path:lib/clipboard.zsh
 #
 ####
+getantidote/use-omz
 ohmyzsh/ohmyzsh path:lib/clipboard.zsh
 ohmyzsh/ohmyzsh path:plugins/copybuffer
 ohmyzsh/ohmyzsh path:plugins/copyfile
@@ -159,6 +170,7 @@ ohmyzsh/ohmyzsh path:plugins/git
 
 # Prezto can be difficult to assemble because it's so interdependent.
 # Use at your own risk.
+# getantidote/use-prezto
 # sorin-ionescu/prezto path:modules/helper/functions kind:autoload
 # sorin-ionescu/prezto path:modules/helper
 # sorin-ionescu/prezto path:modules/environment
@@ -195,6 +207,7 @@ belak/zsh-utils path:history
 belak/zsh-utils path:utility
 belak/zsh-utils path:editor
 
+
 ### Deferred Plugins
 #
 # Antidote allows you to defer loading plugins. This is similar to concepts like "turbo
@@ -223,6 +236,16 @@ zdharma-continuum/fast-syntax-highlighting kind:defer
 #   autoload -Uz compinit && compinit
 #
 ###
+mattmc3/zephyr path:plugins/completion
+
+# zsh-users/zsh-completions is a popular plugin for adding supplemental completions.
+# We combine the `path:` and `kind:fpath` annotations here:
+zsh-users/zsh-completions path:src kind:fpath
+
+# If you want to use the belak/zsh-utils completion plugin to run your compinit, this
+# plugin is meant to be run near the END of your .zsh_plugins.txt file after fpath is
+# fully populated.
+belak/zsh-utils path:completion
 
 # zsh-users/zsh-completions is a popular plugin for adding supplemental completions.
 # We combine the `path:` and `kind:fpath` annotations here:
