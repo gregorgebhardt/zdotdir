@@ -56,3 +56,8 @@ alias ls='lsd'
 alias l='ls -l'
 alias la='ls -la'
 alias lt='ls --tree'
+
+# git
+gcz() {
+  git checkout "$(git branch --all | fzf | tr -d '[:space:]')"
+}

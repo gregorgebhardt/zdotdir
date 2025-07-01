@@ -32,7 +32,7 @@ export GPG_TTY=$(tty)
 PATH=${PATH}:/home/gebhagr/.local/bin
 PATH=${PATH}:/usr/local/go/bin
 PATH=${PATH}:/home/gebhagr/go/bin
-PATH=${PATH}:${KREW_ROOT:-$HOME/.krew}/bin
+export PATH=${PATH}:${KREW_ROOT:-$HOME/.krew}/bin
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
@@ -45,3 +45,16 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(starship init zsh)"
+
+export VAULT_ADDR="https://gorillas.service.vault-prod.rd.corpintra.net/"
+
+export SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+
+
+#export http_proxy=http://localhost:3128
+#export ftp_proxy=$http_proxy
+#export https_proxy=$http_proxy
+#export HTTP_PROXY=$http_proxy
+#export HTTPS_PROXY=$http_proxy
+#export FTP_PROXY=$http_proxy
+#export ALL_PROXY=$http_proxy
