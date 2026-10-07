@@ -26,6 +26,11 @@ autoload -Uz $fpath[1]/*(.:t)
 # Docker CLI completions — must be before compinit
 fpath=($HOME/.docker/completions $fpath)
 
+# Oh-My-Zsh plugins loaded through antidote expect a cache dir for generated completions.
+export ZSH_CACHE_DIR=${XDG_CACHE_HOME:-$HOME/.cache}/oh-my-zsh
+[[ -d $ZSH_CACHE_DIR/completions ]] || mkdir -p $ZSH_CACHE_DIR/completions
+fpath=($ZSH_CACHE_DIR/completions $fpath)
+
 # Source zstyles you might use with antidote.
 [[ -e ${ZDOTDIR:-~}/.zstyles ]] && source ${ZDOTDIR:-~}/.zstyles
 
