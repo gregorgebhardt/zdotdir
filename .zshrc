@@ -23,6 +23,9 @@ ZFUNCDIR=${ZFUNCDIR:-$ZDOTDIR/functions}
 fpath=($ZFUNCDIR $fpath)
 autoload -Uz $fpath[1]/*(.:t)
 
+# Homebrew completions — set here, not in .zprofile, so non-login shells get them too
+fpath=(${HOMEBREW_PREFIX:-/opt/homebrew}/share/zsh/site-functions(N) $fpath)
+
 # Docker CLI completions — must be before compinit
 fpath=($HOME/.docker/completions $fpath)
 

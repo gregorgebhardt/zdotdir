@@ -42,4 +42,3 @@ export PNPM_HOME="$HOME/Library/pnpm"
 path=($PNPM_HOME/bin(N) $path)
 
 eval "$(brew shellenv)"
-fpath=($HOMEBREW_PREFIX/share/zsh/site-functions $fpath)
